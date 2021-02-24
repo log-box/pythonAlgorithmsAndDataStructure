@@ -5,4 +5,6 @@
 
 from random import random
 
-
+x, y = map(int, input('Введите границы диапазона целых чисел через пробел:\n').split())
+n = int(random()*(y-x) + x)
+print(f'Случайное число в заданном диапазоне: {n}')
