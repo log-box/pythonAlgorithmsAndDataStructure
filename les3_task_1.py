@@ -1,11 +1,15 @@
 # В диапазоне натуральных чисел от 2 до 99 определить, сколько из них кратны каждому из чисел в диапазоне от 2 до 9.
 
 
-import random
+array = [0, 0, 0, 0, 0, 0, 0, 0]
 
-SIZE_N = 4
-SIZE_M = 6
-MIN_ITEM = 0
-MAX_ITEM = 1_000
-matrix = [[random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE_M)] for _ in range(SIZE_N)]
-print(*matrix, sep='\n')
+for i in range(2, 100):
+    for j in range(2, 10):
+        if i % j == 0:
+            array[j-2] += 1
+
+print('В диапазоне натуральных чисел от 2 до 99')
+for i in range(len(array)):
+    print(array[i], 'чисел кратных: ', i+2)
+
+
