@@ -3,8 +3,6 @@
 
 import random
 
-import random
-
 SIZE = 3
 MIN_ITEM = 0
 MAX_ITEM = 100
