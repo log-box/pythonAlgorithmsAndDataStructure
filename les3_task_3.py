@@ -15,12 +15,14 @@ max_item = array[0]
 for i in range(len(array)):
     if array[i] < min_item:
         min_item = array[i]
+        min = i
     elif array[i] > max_item:
         max_item = array[i]
+        max = i
 print(min_item, max_item)
 
-max = array.index(max_item)
-min = array.index(min_item)
+#max = array.index(max_item)
+#min = array.index(min_item)
 
 array[max] = min_item
 array[min] = max_item
