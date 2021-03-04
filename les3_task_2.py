@@ -5,7 +5,7 @@
 
 import random
 
-SIZE = 10
+SIZE = 3
 MIN_ITEM = 0
 MAX_ITEM = 100
 array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]

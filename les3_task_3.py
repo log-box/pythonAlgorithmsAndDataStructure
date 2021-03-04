@@ -3,20 +3,22 @@
 
 import random
 
-SIZE = 45
+import random
+
+SIZE = 3
 MIN_ITEM = 0
 MAX_ITEM = 100
 array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
 print(array)
 
-min_item = array[0]
-max_item = array[0]
+min_item = MAX_ITEM
+max_item = MIN_ITEM
 
 for i in range(len(array)):
     if array[i] < min_item:
         min_item = array[i]
         min = i
-    elif array[i] > max_item:
+    if array[i] > max_item:
         max_item = array[i]
         max = i
 print(min_item, max_item)
@@ -28,4 +30,5 @@ array[max] = min_item
 array[min] = max_item
 
 print(array)
+
 
