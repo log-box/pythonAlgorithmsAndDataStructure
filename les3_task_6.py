@@ -1,24 +1,25 @@
 # В одномерном массиве найти сумму элементов, находящихся между минимальным и максимальным элементами.
 # Сами минимальный и максимальный элементы в сумму не включать.
 
-import random
+import random, sys
 
-SIZE = 3
-MIN_ITEM = 0
-MAX_ITEM = 50
-array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
-min = MAX_ITEM
-max = 0
+SIZE = 10
+MIN_ITEM = -10
+MAX_ITEM = -1
+#array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
+array = [-796, -778, -755, -666]
+min_array_item = sys.maxsize
+max_array_item = -sys.maxsize - 1
 sum = 0
 min_index = 0  # без них Пичарм подсвечивает в коде - неудобно
 max_index = 0  # ---
 
 for i in range(len(array)):
-    if array[i] > max:
-        max = array[i]
+    if array[i] > max_array_item:
+        max_array_item = array[i]
         max_index = i
-    if array[i] < min:
-        min = array[i]
+    if array[i] < min_array_item:
+        min_array_item = array[i]
         min_index = i
 
 if min_index < max_index:  # если минимальный стоит слева от максимального

@@ -1,31 +1,35 @@
 # В массиве случайных целых чисел поменять местами минимальный и максимальный элементы.
 
 
+import sys
 import random
 
 SIZE = 3
 MIN_ITEM = 0
 MAX_ITEM = 100
-array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
+#array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
+array = [-796, -778, -755]
 print(array)
+min_array_item = sys.maxsize
+max_array_item = -sys.maxsize - 1
 
-min_item = MAX_ITEM
-max_item = MIN_ITEM
 
 for i in range(len(array)):
-    if array[i] < min_item:
-        min_item = array[i]
+    if array[i] < min_array_item:
         min = i
-    if array[i] > max_item:
-        max_item = array[i]
+        min_array_item = array[i]
+    else:
         max = i
-print(min_item, max_item)
+        max_array_item = array[i]
+
+
+print(min_array_item, max_array_item)
 
 #max = array.index(max_item)
 #min = array.index(min_item)
 
-array[max] = min_item
-array[min] = max_item
+array[max] = min_array_item
+array[min] = max_array_item
 
 print(array)
 
