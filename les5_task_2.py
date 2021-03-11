@@ -28,14 +28,12 @@ while x == 0:
             break
     else:
         x = 1
-print(x_number, y_number)
 
-if len(x_number) > len(y_number):
+if len(x_number) <= len(y_number):
+    x_number, y_number = y_number, x_number
     while len(y_number) > 0:
-        temp1 = y_number.pop()
-        temp2 = x_number.pop()
-        temp1 = reference_list.index(temp1)
-        temp2 = reference_list.index(temp2)
+        temp1 = reference_list.index(y_number.pop())
+        temp2 = reference_list.index(x_number.pop())
         if temp1 + temp2 > 15:
             addition = abs((temp1+temp2) - 16) + one
             one = 1
@@ -44,41 +42,13 @@ if len(x_number) > len(y_number):
         addition = reference_list[addition]
         result.appendleft(addition)
     while len(x_number) > 0:
-        temp1 = x_number.pop()
-        temp1 = reference_list.index(temp1)
+        temp1 = reference_list.index(x_number.pop())
         if temp1 + one > 15:
             addition = abs((temp1+one) - 16)
             one = 1
         else:
             addition = temp1+one
-        addition = reference_list[addition]
-        result.appendleft(addition)
-    if one == 1:
-        result.appendleft(str(one))
-        print(result)
-    else:
-        print(result)
-else:
-    while len(x_number) > 0:
-        temp1 = x_number.pop()
-        temp2 = y_number.pop()
-        temp1 = reference_list.index(temp1)
-        temp2 = reference_list.index(temp2)
-        if temp1 + temp2 > 15:
-            addition = abs((temp1+temp2) - 16) + one
-            one = 1
-        else:
-            addition = temp1 + temp2
-        addition = reference_list[addition]
-        result.appendleft(addition)
-    while len(y_number) > 0:
-        temp1 = y_number.pop()
-        temp1 = reference_list.index(temp1)
-        if temp1 + one > 15:
-            addition = abs((temp1+one) - 16)
-            one = 1
-        else:
-            addition = temp1+one
+            one = 0
         addition = reference_list[addition]
         result.appendleft(addition)
     if one == 1:
