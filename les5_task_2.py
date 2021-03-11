@@ -32,28 +32,28 @@ def hex_summ():
 
     if len(x_number) <= len(y_number):
         x_number, y_number = y_number, x_number
-        while len(y_number) > 0:
-            temp1 = reference_list.index(y_number.pop())
-            temp2 = reference_list.index(x_number.pop())
-            if temp1 + temp2 > 15:
-                addition = abs((temp1+temp2) - 16) + one
-                one = 1
-            else:
-                addition = temp1 + temp2
-            result.appendleft(reference_list[addition])
-        while len(x_number) > 0:
-            temp1 = reference_list.index(x_number.pop())
-            if temp1 + one > 15:
-                addition = abs((temp1+one) - 16)
-                one = 1
-            else:
-                addition = temp1+one
-                one = 0
-            result.appendleft(reference_list[addition])
-        if one == 1:
-            result.appendleft(str(one))
-            print(f'Сумма чисел равна: {str(result)}')
+    while len(y_number) > 0:
+        temp1 = reference_list.index(y_number.pop())
+        temp2 = reference_list.index(x_number.pop())
+        if temp1 + temp2 > 15:
+            addition = abs((temp1+temp2) - 16) + one
+            one = 1
         else:
-            print(f'Сумма чисел равна: {str(result)}')
+            addition = temp1 + temp2
+        result.appendleft(reference_list[addition])
+    while len(x_number) > 0:
+        temp1 = reference_list.index(x_number.pop())
+        if temp1 + one > 15:
+            addition = abs((temp1+one) - 16)
+            one = 1
+        else:
+            addition = temp1+one
+            one = 0
+        result.appendleft(reference_list[addition])
+    if one == 1:
+        result.appendleft(str(one))
+        print(f'Сумма чисел равна: {str(result)}')
+    else:
+        print(f'Сумма чисел равна: {str(result)}')
 
 hex_summ()

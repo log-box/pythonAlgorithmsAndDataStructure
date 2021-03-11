@@ -41,4 +41,3 @@ if not_profitable:
         i += 1
 else:
     print('НЕТ фирм с доходом ниже среднего')
-
