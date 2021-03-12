@@ -27,8 +27,8 @@ def hex_sum():
             x = 0
     while x == 0:
         y_number = deque(input('Введите второе число').upper())
-        for _ in y_number:
-            if _ not in reference_list:
+        for item in y_number:
+            if item not in reference_list:
                 print('Вы ввели не шестнадцатиричное число')
                 break
         else:
