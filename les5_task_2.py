@@ -7,8 +7,12 @@
 from collections import deque
 
 
-def hex_summ():
-    reference_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+def hex_sum():
+
+    reference_list = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'A': 10, 'B': 11,
+                      'C': 12, 'D': 13, 'E': 14, 'F': 15,
+                      0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9', 10: 'A', 11: 'B',
+                      12: 'C', 13: 'D', 14: 'E', 15: 'F'}
     x = 1
     result = deque()
     one = 0
@@ -33,16 +37,17 @@ def hex_summ():
     if len(x_number) <= len(y_number):
         x_number, y_number = y_number, x_number
     while len(y_number) > 0:
-        temp1 = reference_list.index(y_number.pop())
-        temp2 = reference_list.index(x_number.pop())
+        temp1 = reference_list[y_number.pop()]
+        temp2 = reference_list[x_number.pop()]
         if temp1 + temp2 > 15:
             addition = abs((temp1+temp2) - 16) + one
             one = 1
         else:
-            addition = temp1 + temp2
+            addition = temp1 + temp2 + one
+            one = 0
         result.appendleft(reference_list[addition])
     while len(x_number) > 0:
-        temp1 = reference_list.index(x_number.pop())
+        temp1 = reference_list[x_number.pop()]
         if temp1 + one > 15:
             addition = abs((temp1+one) - 16)
             one = 1
@@ -56,4 +61,4 @@ def hex_summ():
     else:
         print(f'Сумма чисел равна: {str(result)}')
 
-hex_summ()
+hex_sum()
