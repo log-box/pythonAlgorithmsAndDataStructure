@@ -19,8 +19,8 @@ def hex_sum():
 
     while x == 1:
         x_number = deque(input('Введите первое число').upper())
-        for _ in x_number:
-            if _ not in reference_list:
+        for item in x_number:
+            if item not in reference_list:
                 print('Вы ввели не шестнадцатиричное число')
                 break
         else:
