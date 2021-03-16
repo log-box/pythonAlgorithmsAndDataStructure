@@ -21,7 +21,8 @@ def count(obj):
             return temp + sys.getsizeof(obj)
         elif not isinstance(obj, str):
             for item in obj:
-                count(item)
+                temp += count(item)
+            return temp + sys.getsizeof(obj)
     return sys.getsizeof(obj)
 
 
@@ -97,8 +98,9 @@ max_built_in_func()
 # 28
 # ***********************************
 # 466
-# Функция max_my_func заняла: 10853 байт памяти
-# Функция max_teacher_func заняла: 9100 байт памяти
-# Функция max_built_in_func заняла: 9128 байт памяти
+# Функция max_my_func заняла: 38473 байт памяти
+# Функция max_teacher_func заняла: 36712 байт памяти
+# Функция max_built_in_func заняла: 36748 байт памяти
 #
+# Process finished with exit code 0
 # оптимальная по потреблению памяти функция max_teacher_func()
