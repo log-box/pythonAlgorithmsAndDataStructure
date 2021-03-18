@@ -26,13 +26,11 @@ def split_and_merge_list(arr):
             else:
                 sorted_array.append(part_2[j])
                 j += 1
-
         sorted_array += part_1[i:] + part_2[j:]
         return sorted_array
     splitter = len(arr) // 2
-    arr_part_one = arr[:splitter]     # деление массива на два примерно равной длины
+    arr_part_one = arr[:splitter]
     arr_part_two = arr[splitter:]
-
     if len(arr_part_one) > 1:
         arr_part_one = split_and_merge_list(arr_part_one)
     if len(arr_part_two) > 1:
